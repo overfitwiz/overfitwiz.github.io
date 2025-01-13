@@ -1,4 +1,5 @@
 /* Reset and global styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -114,9 +115,10 @@ body {
         margin-top: 10px;
     }
 }
+
 /* Hero Section */
 .hero {
-    background-image: url('images/background.jpg'); /* Path to background image */
+    background-image: url('hero.png'); /* Path to background image */
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image within the hero section */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -190,7 +192,7 @@ body {
     }
 }
 
-General Section Styling */
+/* General Section Styling */
 .section {
     padding: 80px 20px;
     max-width: 800px;
@@ -207,4 +209,98 @@ General Section Styling */
 .section p {
     font-size: 1em;
     color: #666;
+}
+
+/* Team Section */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(20% - 20px); /* Adjusts for 5 team members in a row with gap */
+    min-width: 150px; /* Ensures minimum width for smaller screens */
+}
+
+.team-member img {
+    width: 100px; /* Uniform size for all team member images */
+    height: 100px; /* Uniform size for all team member images */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    border-radius: 50%; /* Makes images circular */
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1em;
+}
+
+.team-member .links {
+    display: flex;
+    gap: 10px;
+}
+
+.team-member .links img {
+    width: 20px; /* Smaller size for LinkedIn and Google Scholar icons */
+    height: 20px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .team-member {
+        width: calc(50% - 20px); /* Two team members per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%; /* One team member per row on very small screens */
+    }
+}
+
+/* Our Solution Section */
+.solution-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.solution-description {
+    flex: 1;
+    text-align: left;
+}
+
+.solution-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.solution-description li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.solution-image {
+    flex: 1;
+    max-width: 50%; /* Adjusts the image to occupy roughly half of the section */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .solution-content {
+        flex-direction: column;
+    }
+
+    .solution-image {
+        max-width: 100%;
+        margin-top: 20px;
+    }
 }
